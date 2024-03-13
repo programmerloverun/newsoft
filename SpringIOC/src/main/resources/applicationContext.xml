@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--1. dog案例-->
+    <!--(1) 构造器方法-->
+    <bean id="dog" class="com.leo.pojo.Dog">
+        <!--方式一 Setter-->
+<!--        <property name="name" value="dog"/>-->
+<!--        <property name="age" value="18"/>-->
+        <!--方式二 构造器-->
+<!--        <constructor-arg name="name" value="dog"/>-->
+<!--        <constructor-arg name="age" value="18"/>-->
+        <constructor-arg index="0" value="dog"/>
+        <constructor-arg index="1" value="18"/>
+    </bean>
+
+    <!--（2） 普通工厂模式-->
+    <bean id="factory" class="com.leo.factory.DogFactory"></bean>
+    <bean id="dog2" factory-bean="factory" factory-method="getDog"></bean>
+
+
+    <!--（3） 静态工厂方法-->
+    <bean id="dog3" class="com.leo.factory.DogFactory" factory-method="getstaticDog"></bean>
+
+    <!--2.paper案例-->
+
+    <!--(1) 构造器方法-->
+    <bean id="paper" class="com.leo.pojo.Paper">
+        <property name="name" value="paper"/>
+        <property name="size" value="A4"/>
+    </bean>
+
+    <!--（2） 普通工厂模式-->
+    <bean id="paperfactory" class="com.leo.factory.PaperFactory"></bean>
+    <bean id="paper2" factory-bean="paperfactory" factory-method="createPaper"></bean>
+
+
+    <!--（3） 静态工厂方法-->
+    <bean id="paper3" class="com.leo.factory.PaperFactory" factory-method="createstaticPaper"></bean>
+
+    <!--bean生命周期-->
+    <bean id="dog4" class="com.leo.pojo.Dog" init-method="init" destroy-method="destroy"></bean>
+</beans>

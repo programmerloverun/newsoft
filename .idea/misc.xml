@@ -6,10 +6,15 @@
       <list>
         <option value="$PROJECT_DIR$/Junit/pom.xml" />
         <option value="$PROJECT_DIR$/Spring/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringIOC/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringIOCTest/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringAnnotation/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringHomeWork/pom.xml" />
+        <option value="$PROJECT_DIR$/Springhomeworkclass/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
