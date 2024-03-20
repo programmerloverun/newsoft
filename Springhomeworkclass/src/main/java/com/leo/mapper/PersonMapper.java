@@ -12,4 +12,15 @@ import java.util.List;
 public interface PersonMapper {
 
 
+    Person selectPersonByNameAndPwd(String name, String pwd);
+
+    List<Person> selectAll();
+
+    boolean insertPerson(Person person);
+
+    Person selectPersonByName(String name);
+
+    boolean delByName(String name);
+
+    boolean alter(Person person);
 }
