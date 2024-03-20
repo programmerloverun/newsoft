@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--基本类型属性-->
+    <bean id="dog" class="com.leo.pojo.Dog">
+        <constructor-arg name="did" value="100"></constructor-arg>
+        <constructor-arg name="dname" value="豆豆"></constructor-arg>
+    </bean>
+    <bean id="dog2" class="com.leo.pojo.Dog">
+        <constructor-arg name="did" value="101"></constructor-arg>
+        <constructor-arg name="dname" value="毛毛"></constructor-arg>
+    </bean>
+    <bean id="dog3" class="com.leo.pojo.Dog">
+        <constructor-arg name="did" value="102"></constructor-arg>
+        <constructor-arg name="dname" value="洛洛"></constructor-arg>
+    </bean>
+
+    <bean id="person" class="com.leo.pojo.Person">
+        <property name="pname" value="leo"></property>
+        <property name="page" value="18"></property>
+        <property name="dog" ref="dog"></property>
+        <property name="list">
+            <list>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </list>
+        </property>
+        <property name="listDog">
+            <list>
+                <ref bean="dog2"/>
+                <ref bean="dog3"/>
+            </list>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="1" value="A"></entry>
+                <entry key="2" value="B"></entry>
+                <entry key="3" value="C"></entry>
+            </map>
+        </property>
+        <property name="mapDog" >
+            <map>
+                <entry key="dog2" value-ref="dog2"></entry>
+                <entry key="dog3" value-ref="dog3"></entry>
+            </map>
+        </property>
+        <property name="set">
+            <set>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </set>
+        </property>
+        <property name="setDog">
+            <set>
+                <ref bean="dog2"/>
+                <ref bean="dog3"/>
+            </set>
+        </property>
+    </bean>
+</beans>
